@@ -43,6 +43,7 @@ public class FoodController {
 	   if(endPage>totalpage)
 		   endPage=totalpage;
 	   
+	   
 	   // 데이터를 전송 
 	   model.addAttribute("list", list);
 	   model.addAttribute("curpage", curpage);

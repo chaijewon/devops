@@ -18,12 +18,12 @@ public interface BoardRepository extends JpaRepository<BoardEntity, Integer>{
 		 +"TO_CHAR(regdate,'YYYY-MM-DD') as dbday,hit,num "
 		 +"FROM (SELECT no,name,subject,content,regdate,hit,rownum as num "
 		 +"FROM (SELECT no,name,subject,content,regdate,hit "
-		 +"FROM board ORDER BY no DESC)) "
+		 +"FROM cjw_board ORDER BY no DESC)) "
 		 +"WHERE num BETWEEN :start AND :end",nativeQuery = true)
    public List<BoardVO> boardListData(@Param("start") int start,@Param("end") int end);
    
    // Sequence 
-   @Query(value="SELECT NVL(MAX(no)+1,1) FROM board",nativeQuery = true)
+   @Query(value="SELECT NVL(MAX(no)+1,1) FROM cjw_board",nativeQuery = true)
    public int maxNo();
    // save , count , delete 
 }

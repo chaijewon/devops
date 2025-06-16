@@ -52,7 +52,7 @@ jobs:
       run: |
         set +e
         timeout 300s rsync -e "ssh -o StrictHostKeyChecking=yes" \
-          -avz build/libs/*.jar ubuntu@15.164.94.6:~/app
+          -avz build/libs/*.jar ubuntu@3.35.206.83:~/app
         EXIT_CODE=$?
         if [ "$EXIT_CODE" -eq 124 ]; then
           echo "Rsync timed out after 5 minutes, proceeding..."

@@ -16,6 +16,7 @@ public class BoardController {
 	@Autowired
 	private BoardService bService;
 	
+	
 	@GetMapping("/board/list")
 	public String board_list(@RequestParam(name = "page",required = false) String page, Model model)
 	{

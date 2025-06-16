@@ -8,4 +8,5 @@ public interface BoardVO {
    public String getDbday();
    public int getHit();
    public int getNum();
+   
 }
